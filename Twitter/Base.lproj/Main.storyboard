@@ -32,16 +32,17 @@
                     </view>
                     <connections>
                         <segue destination="dFH-9X-ohq" kind="presentation" identifier="loginToHome " id="hfD-92-rmT"/>
+                        <segue destination="dFH-9X-ohq" kind="presentation" identifier="loggin" id="kln-Dp-JD1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lIO-Qk-jzG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-488.40579710144931" y="38.839285714285715"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Home-->
         <scene sceneID="Mub-RP-fVL">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="Saz-PG-YpP" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="Saz-PG-YpP" customClass="HomeTableTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="z3D-c1-hC5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,7 +62,14 @@
                             <outlet property="delegate" destination="Saz-PG-YpP" id="7AS-Vv-ApC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="lOQ-dl-Yhb"/>
+                    <navigationItem key="navigationItem" title="Home" id="lOQ-dl-Yhb">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="dui-5m-4WZ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onLogout:" destination="Saz-PG-YpP" id="hkj-K9-pdt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ayj-sQ-KkI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,6 +82,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oXH-b1-A1C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemTealColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Saz-PG-YpP" kind="relationship" relationship="rootViewController" id="8Pn-dZ-40H"/>
@@ -84,9 +99,15 @@
             <point key="canvasLocation" x="265" y="39"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kln-Dp-JD1"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
